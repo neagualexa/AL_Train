@@ -710,7 +710,7 @@ const evalKind = (skill_app) => {
 
 const getInput = (skill_app_uid) => [(s) =>{
     let skill_app = s?.skill_apps[skill_app_uid];
-    return skill_app?.inputs.value ?? skill_app?.input ?? ""
+    return skill_app?.input ?? ""
     },
     (o,n) => o == n
   ]
@@ -759,7 +759,7 @@ const ActionListItem = memo(({style, skill_app_uid}) => {
                   (hasVis && 6) ||
                   2;
   // console.log(scale, elevation)
-  // let input = skill_app?.inputs.value ?? skill_app?.input ?? ""
+  // let input = skill_app?.input ?? ""
   let fx = skill_app?.explanation_selected
 
   let {func, skill_uid, head_vals=null, matches=[]} = skill_app;
@@ -1139,12 +1139,12 @@ function ActionDialog({style}){
 }
 
 function DemonstrateMenu({}){
-  let {setMode, addSkillApp, removeSkillApp, setInputs} = authorStore()
+  let {setMode, addSkillApp, removeSkillApp, setInput} = authorStore()
   let [skill_app, arg_foci_mode] = useAuthorStoreChange([
         getFocusOrHover(), "@mode=='arg_foci'"])
 
   let reward = skill_app?.reward ?? 0
-  let demo_text = skill_app?.inputs?.value ?? skill_app?.input ?? ""
+  let demo_text = skill_app?.input ?? ""
   // console.log(demo_text)
   let kind = "demo" + ((reward > 0) ? "_correct" : "_incorrect") + (skill_app?.only ? "_only" : "")
   
@@ -1178,7 +1178,7 @@ function DemonstrateMenu({}){
               ...(!allow_edit && {color: "rgba(100,100,100,.3)", userSelect : "none"})
               }}
             value={demo_text}
-            onChange={(e)=>{setInputs(skill_app, {value : e.target.value})}}
+            onChange={(e)=>{setInput(skill_app, e.target.value)}}
             readOnly={!allow_edit}
 
           />
@@ -1334,11 +1334,11 @@ let ActionMenuApplyButton = memo(({skill_app}) => {
 
 
 function SmallDemoMenu({skill_app}){
-  let {setMode, addSkillApp, removeSkillApp, setInputs} = authorStore()
+  let {setMode, addSkillApp, removeSkillApp, setInput} = authorStore()
   let [hasFocus, arg_foci_mode] = useAuthorStoreChange([focusHasVis(), "@mode=='arg_foci'"])
 
   let reward = skill_app?.reward ?? 0
-  let demo_text = skill_app?.inputs?.value ?? skill_app?.input ?? ""
+  let demo_text = skill_app?.input ?? ""
 
   let button_action = skill_app.action_type.includes("Button");
   if(button_action){
@@ -1374,7 +1374,7 @@ function SmallDemoMenu({skill_app}){
               ...(!allow_edit && {color: "rgba(100,100,100,.3)", userSelect : "none"})
               }}
             value={demo_text}
-            onChange={(e)=>{setInputs(skill_app, {value : e.target.value})}}
+            onChange={(e)=>{setInput(skill_app, e.target.value)}}
             readOnly={!allow_edit}
 
           />

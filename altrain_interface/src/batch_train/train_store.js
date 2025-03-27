@@ -250,12 +250,12 @@ export const useTrainStore = create((set,get) => ({
             await tutor.applySAI(sai)    
             tutor?.colorElement(sai.selection, "DEMO");
             reward = 1
-            nl.term_print(`DEMO: ${sai.selection} -> ${JSON.stringify(sai.inputs)}`, "DEMO");
+            nl.term_print(`DEMO: ${sai.selection} -> ${JSON.stringify(sai.input)}`, "DEMO");
           }
         }else{
           // Print Feedback
           let print_type = reward > 0 ? "CORRECT" : "INCORRECT"
-          nl.term_print(`${print_type}: ${sai.selection} -> ${JSON.stringify(sai.inputs)}`, print_type);
+          nl.term_print(`${print_type}: ${sai.selection} -> ${JSON.stringify(sai.input)}`, print_type);
         }
 
         // If use_arg_foci == false then remove arg_foci from sai

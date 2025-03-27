@@ -139,8 +139,8 @@ export default class NetworkLayer {
     return resp
   }
 
-  train(agent_uid, state, sai, reward, rest={}) {
-    let data = {agent_uid, state, ...sai, reward, ...rest}
+  train(agent_uid, state, action, reward, rest={}) {
+    let data = {agent_uid, state, ...action, reward, ...rest}
     console.log("TRAIN DATA", data)
     return send_post(this.agent_url + "/train/", data)
   }
@@ -158,10 +158,10 @@ export default class NetworkLayer {
     return resp
   }
 
-  explain_demo(agent_uid, state, sai, rest={}) {
+  explain_demo(agent_uid, state, action, rest={}) {
     let t0 = window.performance.now()//new Date();
 
-    let data = {agent_uid, state, ...sai, ...rest}
+    let data = {agent_uid, state, ...action, ...rest}
     console.log("EXPLAIN DEMO DATA", data)
 
     let resp = send_post(this.agent_url + "/explain_demo/", data)
@@ -177,14 +177,14 @@ export default class NetworkLayer {
     return send_post(this.agent_url + "/get_state_uid/", data)
   }
 
-  predict_next_state(agent_uid, state, sai, rest={}) {
-    let data = {agent_uid, state, sai, ...rest}
+  predict_next_state(agent_uid, state, action, rest={}) {
+    let data = {agent_uid, state, action, ...rest}
     console.log("PREDICT NEXT STATE DATA", data)
     return send_post(this.agent_url + "/predict_next_state/", data)
   }
 
-  check(agent_uid, state, sai, context={}) {
-    var data = {agent_uid, state, sai}
+  check(agent_uid, state, action, context={}) {
+    var data = {agent_uid, state, action}
     console.log("CHECK", data);
     return send_post(this.agent_url + "/check/", data)
         .then(json => json["reward"]);
@@ -316,14 +316,14 @@ export default class NetworkLayer {
         var responses = [];
         if ("responses" in resp) {
           resp["responses"].forEach(function(r, index) {
-            var sai = {
+            var action = {
               selection: r["selection"],
-              action: r["action"],
-              inputs: r["inputs"]
+              action_type: r["action_type"],
+              input: r["input"]
             };
             console.log(r);
             console.log(r["selection"]);
-            responses.push(sai);
+            responses.push(action);
           });
         }
         var completeness_data = {

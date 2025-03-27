@@ -293,7 +293,7 @@ export function SkillAppCard({
 
   let [buttonAreaHover, setButtonAreaHover] = useState(false)
   
-  let text = skill_app?.input ?? skill_app?.inputs?.value ?? ""
+  let text = skill_app?.input ??  ""
 
   // TODO: HARD-CODED find better way
   if(skill_app.action_type.toLowerCase().includes("button")){

@@ -154,7 +154,7 @@ export let graph_data = {
             "next_state_uid": 1,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "inputs" : {"value" : "4"},
+            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "input" : "4",
                             "reward" : 1, is_demo : true}
         },
         A1 : {
@@ -163,7 +163,7 @@ export let graph_data = {
             "next_state_uid": 2,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "carry1", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry1", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : -1}
         },
         A2 : {
@@ -172,7 +172,7 @@ export let graph_data = {
             "next_state_uid": 3,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "out2", "action_type" : "UpdateTextField", "inputs" : {"value" : "5"},
+            "skill_app" : { "selection" : "out2", "action_type" : "UpdateTextField", "input" : "5",
                             "reward" : 0}
         },
         A3 : {
@@ -181,7 +181,7 @@ export let graph_data = {
             "next_state_uid": 4,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A4 : {
@@ -190,7 +190,7 @@ export let graph_data = {
             "next_state_uid": 5,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "out3", "action_type" : "UpdateTextField", "inputs" : {"value" : "5"},
+            "skill_app" : { "selection" : "out3", "action_type" : "UpdateTextField", "input" : "5",
                             "reward" : 0}
         },
         A5 : {
@@ -199,7 +199,7 @@ export let graph_data = {
             "next_state_uid": 6,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "carry3", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry3", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A6 : {
@@ -208,7 +208,7 @@ export let graph_data = {
             "next_state_uid": 7,
             "skill": "",
             "correct": true,
-            "skill_app" : { "selection" : "out4", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "out4", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A7 : {
@@ -217,7 +217,7 @@ export let graph_data = {
             "next_state_uid": 8,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 1}
         },
         A8 : {
@@ -226,7 +226,7 @@ export let graph_data = {
             "next_state_uid": 9,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "carry1", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry1", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A9 : {
@@ -235,7 +235,7 @@ export let graph_data = {
             "next_state_uid": 10,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "inputs" : {"value" : "-1"},
+            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "input" : "-1",
                             "reward" : 0}
         },
         A10 : {
@@ -244,7 +244,7 @@ export let graph_data = {
             "next_state_uid": 11,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out3", "action_type" : "UpdateTextField", "inputs" : {"value" : "5"},
+            "skill_app" : { "selection" : "out3", "action_type" : "UpdateTextField", "input" : "5",
                             "reward" : 1}
         },
         A11 : {
@@ -253,7 +253,7 @@ export let graph_data = {
             "next_state_uid": 12,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "carry3", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry3", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A12 : {
@@ -262,7 +262,7 @@ export let graph_data = {
             "next_state_uid": 13,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "inputs" : {"value" : "4"},
+            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "input" : "4",
                             "reward" : 0}
         },
         A13 : {
@@ -271,7 +271,7 @@ export let graph_data = {
             "next_state_uid": 14,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "inputs" : {"value" : "-1"},
+            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "input" : "-1",
                             "reward" : 0}
         },
         A14 : {
@@ -280,7 +280,7 @@ export let graph_data = {
             "next_state_uid": 15,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out2", "action_type" : "UpdateTextField", "inputs" : {"value" : "5"},
+            "skill_app" : { "selection" : "out2", "action_type" : "UpdateTextField", "input" : "5",
                             "reward" : 0}
         },
         A15 : {
@@ -289,7 +289,7 @@ export let graph_data = {
             "next_state_uid": 16,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A16 : {
@@ -298,7 +298,7 @@ export let graph_data = {
             "next_state_uid": 2,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "inputs" : {"value" : "4"},
+            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "input" : "4",
                             "reward" : 0}
         },
         A17 : {
@@ -307,7 +307,7 @@ export let graph_data = {
             "next_state_uid": 17,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "inputs" : {"value" : "-1"},
+            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "input" : "-1",
                             "reward" : 0}
         },
         A18 : {
@@ -316,7 +316,7 @@ export let graph_data = {
             "next_state_uid": 2,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "inputs" : {"value" : "4"},
+            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "input" : "4",
                             "reward" : 0}
         },
         A19 : {
@@ -325,7 +325,7 @@ export let graph_data = {
             "next_state_uid": 18,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "inputs" : {"value" : "4"},
+            "skill_app" : { "selection" : "out1", "action_type" : "UpdateTextField", "input" : "4",
                             "reward" : 0}
         },
         A19 : {
@@ -334,7 +334,7 @@ export let graph_data = {
             "next_state_uid": 13,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "inputs" : {"value" : "1"},
+            "skill_app" : { "selection" : "carry2", "action_type" : "UpdateTextField", "input" : "1",
                             "reward" : 0}
         },
         A20 : {
@@ -343,7 +343,7 @@ export let graph_data = {
             "next_state_uid": 18,
             "skill": "",
             "correct": false,
-            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "inputs" : {"value" : "-1"},
+            "skill_app" : { "selection" : "done", "action_type" : "UpdateTextField", "input" : "-1",
                             "reward" : 0}
         }
     }

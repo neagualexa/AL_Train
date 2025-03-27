@@ -846,8 +846,8 @@ const useAuthorStore = create((set,get) => ({
     let prev_next_state_uid = graph_actions?.[skill_app_uid]?.next_state_uid
     
     // Make SAI
-    let {selection, action_type, inputs, ...rest} = skill_app
-    let sai = {selection, action_type, inputs}
+    let {selection, action_type, input, ...rest} = skill_app
+    let sai = {selection, action_type, input}
 
     let agent_uid = await agentPromise
     let {next_state: next_state, state_uid: curr_state_uid, next_state_uid : next_state_uid} = 
@@ -996,6 +996,8 @@ const useAuthorStore = create((set,get) => ({
 */ 
 
   explainDemo : async (skill_app) => {
+    console.log("<>EXPLAIN DEMO!!!!!!")
+
     let {network_layer, modifySkillApp} = get()
 
     // Begin the loading animation for this skill app
@@ -1018,8 +1020,8 @@ const useAuthorStore = create((set,get) => ({
     if(pending_explains?.[skill_app_uid]?.['next'] == skill_app){
       // Then request an explanation for it.
       let {agent_uid, tutor_state, updateExplanations} = get();
-      let {selection, action_type, inputs, ...rest} = skill_app
-      let sai = {selection, action_type, inputs}
+      let {selection, action_type, input, ...rest} = skill_app
+      let sai = {selection, action_type, input}
       let explain_promise = new Promise( async (resolve, reject) => {
         let {skill_explanations, func_explanations} = 
           await network_layer.explain_demo(agent_uid, tutor_state, sai, rest);
@@ -1320,7 +1322,7 @@ const useAuthorStore = create((set,get) => ({
       console.log("STACK EXHAUSTED")
       for(let skill_app of Object.values(skill_apps)){
         if((skill_app?.reward ?? 0) > 0 && !skill_app?.removed && !skill_app?.remove){
-          console.log("+++", skill_app.inputs)
+          console.log("+++", skill_app.input)
           changes = {staged_uid: skill_app.uid, staged_sel:skill_app.selection, stage_undo_stack:[]}
           break
         }
@@ -1814,8 +1816,8 @@ const useAuthorStore = create((set,get) => ({
 
       // Keep the sai of the applied app
       if(skill_app){
-        let {selection, action_type, inputs} = skill_app
-        apply_sai = {selection, action_type, inputs}  
+        let {selection, action_type, input} = skill_app
+        apply_sai = {selection, action_type, input}  
       }else{
           skill_app
       }
@@ -1868,7 +1870,7 @@ const useAuthorStore = create((set,get) => ({
           let app = act?.skill_app
           if(app.selection == apply_sai.selection && 
              app.action_type == apply_sai.action_type && 
-             app.inputs?.['value'] == apply_sai.inputs?.['value']){
+             app.input == apply_sai.input){
             applied_action = act
           }
         }
@@ -2462,12 +2464,14 @@ const useAuthorStore = create((set,get) => ({
     }
   },
 
-  setInputs : async (skill_app, inputs) => {
+  setInput : async (skill_app, input) => {
     let {modifySkillApp, insertIntoGraph, removeFromGraph, explainDemo} = get()
 
-    modifySkillApp(skill_app, {'inputs' : inputs}, true)
+    modifySkillApp(skill_app, {"input" : input}, true)
+
+    console.log("SETINPUT:", skill_app, input)
     let {skill_apps} = get();
-    if(inputs?.['value']){
+    if(input){
       await insertIntoGraph(skill_apps[skill_app.uid])  
     }else{
       await removeFromGraph(skill_apps[skill_app.uid])  
@@ -2476,7 +2480,7 @@ const useAuthorStore = create((set,get) => ({
     skill_app = skill_apps[skill_app.uid]
 
     explainDemo(skill_app)    
-    // applySkillAppAttr(store, skill_app,'inputs', inputs)
+    // applySkillAppAttr(store, skill_app,'input', input)
   },
 
   // setSkillLabel : (skill_app, skill_label) => set((store) => (

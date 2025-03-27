@@ -520,7 +520,7 @@ const Edge = ({skill_app_uid}) =>{
         style={{x: 2, y:-14, width: 24, height : 24}} 
         href={images.tap}/>
     }else{
-        let text = skill_app?.input ?? skill_app?.inputs?.value ?? ""
+        let text = skill_app?.input ?? ""
         action_content =(
             <text
                 className='edge-text'
@@ -843,7 +843,7 @@ const UnorderedGroup = ({u_obj, relative=true}) =>{
     for(let a_uid of skill_app_uids){
         let a = actions?.[a_uid];
 
-        // console.log(a?.skill_app?.inputs?.value, a_uid.slice(0,5), [a?.x, a?.y], minY, a?.y < minY)
+        // console.log(a?.skill_app?.input, a_uid.slice(0,5), [a?.x, a?.y], minY, a?.y < minY)
         if(a?.x < minX){minX = a?.x}
         if(a?.x > maxX){maxX = a?.x}
         if(a?.y < minY){minY = a?.y}

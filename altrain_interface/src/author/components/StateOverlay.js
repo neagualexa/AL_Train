@@ -146,7 +146,12 @@ function MultipleActionsIndicator({style, show_app, skill_app, skill_app_uids, h
         </a> 
       </div> ) ||
     (state_kind == 'some_incorrect' && 
-      <a style={{position: "absolute", color : colors.incorrect, fontWeight: 'bold', fontSize:12, margin:-2}}>{'✖'}</a>) ||
+      <div style={{width : 6, height : 6, position: "relative"}}>
+        <a style={{position: "absolute", left: -1, top: -4, 
+          color : colors.incorrect, fontWeight: 'bold', fontSize:12}}>
+          {'✖'}
+        </a>
+       </div> ) ||
       <a>{"-"}</a>
   )
 
@@ -451,7 +456,7 @@ function skillAppExtractProps(skill_app, isExternalHasOnly){
               (incorrect && colors.incorrect) ||
               (colors.default)
   // console.log(isDemo, correct, incorrect, colors.demo, color)
-  let input = skill_app?.inputs.value ?? skill_app?.input ?? ""
+  let input = skill_app?.input ?? ""
   let uid = skill_app?.uid ?? ""
   return {correct, incorrect, isDemo, color, input, uid}
 }
@@ -482,7 +487,7 @@ const getOverlaySkillApp = (sel) =>{
     },
       ([o,os],[n,ns])=>{
         // console.log("Recalc", sel, n?.reward, o?.reward)
-        return n?.uid === o?.uid && shallowEqual(n?.inputs, o?.inputs)  && n?.reward === o?.reward && os === ns
+        return n?.uid === o?.uid && shallowEqual(n?.input, o?.input)  && n?.reward === o?.reward && os === ns
     }]
 }
 
@@ -509,7 +514,7 @@ const newSkillApp = (sel, action_type, input, props) =>{
     uid : `A_${randomUID()}`,
     selection: sel,
     action_type : action_type,
-    inputs : {value :input},
+    input : input,
     has_changed : true,
     ...props
   } 
@@ -536,7 +541,7 @@ function TextFieldOverlay({sel, elem}) {
     [getOverlaySkillApp(sel), getHasSelVis(sel), `@focus_sel==${sel}`, `@only_count!=0`, "@mode",
     `@input_focus==${sel}`, '@in_done_state', '@show_all_apps', `@hover_sel==${sel}`],
   )
-  let {setInputFocus, addSkillApp, removeSkillApp, setInputs, setFocus, beginSetArgFoci, confirmArgFoci} = authorStore()
+  let {setInputFocus, addSkillApp, removeSkillApp, setInput, setFocus, beginSetArgFoci, confirmArgFoci} = authorStore()
   // let empty_focus = (!skill_app?.input && has_focus)
   // console.log(not_empty.current, skill_app)
   // console.log("SEL", sel)
@@ -544,7 +549,7 @@ function TextFieldOverlay({sel, elem}) {
 
 
   // let {color} = skillAppExtractProps(skill_app, isExternalHasOnly)
-  let input = skill_app?.inputs.value ?? skill_app?.input
+  let input = skill_app?.input
 
   let text, fontColor, placeholder;
   if(mode == "start_state"){
@@ -623,7 +628,7 @@ function TextFieldOverlay({sel, elem}) {
           // console.log(target)
           // If something else was clicked don't blur
           if(!target){
-            let input = skill_app?.inputs.value ?? skill_app?.input ?? ""
+            let input = skill_app?.input ?? ""
             if((input.length ?? 0)===0){
               removeSkillApp(skill_app)
             }else if(mode == "train"){
@@ -666,7 +671,7 @@ function TextFieldOverlay({sel, elem}) {
 
           }else if(skill_app){
             console.log("Set Input", text, "->", new_value)
-            setInputs(skill_app, {value: new_value})  
+            setInput(skill_app, new_value)  
           }
           setEmptyFocus(false)
           
