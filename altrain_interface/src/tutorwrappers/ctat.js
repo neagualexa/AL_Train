@@ -700,8 +700,14 @@ let BaseMixin = (superclass) => class extends superclass {
 
   _cleanSAI = (sai) =>{
     if(!('selection' in sai)){ sai['selection'] = sai['sel'] || null}    
-    if(!('inputs' in sai)){ sai['inputs'] = {'value' : sai['input'] || null}}
     if(!('arg_foci' in sai)){ sai['arg_foci'] = sai['args'] || null} 
+    if('action' in sai){ 
+      sai['action_type'] = sai['action'] || null
+      delete sai['action']
+    }
+    if('inputs' in sai){
+      sai['input'] = sai['input']['value'] || null
+    }
     console.log("CLEAN!",sai)   
     return sai
   }
@@ -727,10 +733,11 @@ let BaseMixin = (superclass) => class extends superclass {
           for (let skill_app of skill_applications){
             //SA === SA (SA-)
             if(skill_app['selection'] === resp['selection'] &&
-               skill_app['action'] === resp['action']){
+               (skill_app['action_type'] || skill_app['action'])
+                  === resp['action']){
 
               //I == I (--I) <- '==' is explicit choice so '-1' == -1
-              let [inps_a, inps_b] = [skill_app['inputs'],resp['inputs']]
+              let [inps_a, inps_b] = [skill_app['input'],resp['input']]
               let eq = true
               for(let attr in inps_a){
                 if(!(attr in inps_b && inps_a[attr]===inps_b[attr])){
@@ -739,7 +746,7 @@ let BaseMixin = (superclass) => class extends superclass {
                 } 
               }
               if(eq){
-                // deep_equal(skill_app['inputs'],resp['inputs'])){
+                // deep_equal(skill_app['input'],resp['input'])){
                 matches_any = true
                 skill_app['stu_resp_type'] = "ATTEMPT"
                 skill_app['outcome'] = "CORRECT"
@@ -799,11 +806,13 @@ let BaseMixin = (superclass) => class extends superclass {
       let action_type = sai?.action_type ?? sai.action
 
       // Force buttons to have input -1.
-      if (action_type === "ButtonPressed") sai.inputs = { value: -1 };
+      if (action_type === "ButtonPressed"){
+        sai.input = -1;
+      }
 
       // Apply the SAI
       const {CTATSAI,CTATCommShell} = this.iframe_content;
-      let input = (sai.inputs && sai.inputs["value"]) || sai.input      
+      let input =  sai.input || (sai.inputs && sai.inputs["value"])
       let sai_obj = new CTATSAI(sai.selection, action_type, input);
       CTATCommShell.commShell.processComponentAction(sai_obj, true)
       // console.log("sai_obj",sai_obj)
@@ -850,8 +859,8 @@ let BaseMixin = (superclass) => class extends superclass {
         .getDefaultSAI();
         sai = {
           selection: sai.getSelection(),
-          action: sai.getAction(),
-          inputs: { value: sai.getInput() }
+          action_type: sai.getAction(),
+          input: sai.getInput()
         };
         resolve(sai);
       }else{
@@ -998,8 +1007,8 @@ let InteractiveMixin = (superclass) => class extends superclass {
 
     sai = {
       selection: sai.getSelection(),
-      action: sai.getAction(),
-      inputs: { value: sai.getInput() }
+      action_type: sai.getAction(),
+      input: sai.getInput()
     };
 
     this.lockElement(sel);
@@ -1040,7 +1049,7 @@ let InteractiveMixin = (superclass) => class extends superclass {
   }
 
   reprSkillApplication = (skill_app) =>{
-    let value = skill_app.inputs["value"] !== null ? skill_app.inputs["value"] : "";
+    let value = skill_app.input !== null ? skill_app.input : "";
     return skill_app.selection + " -> " + value
   }
 
@@ -1210,7 +1219,7 @@ let InteractiveMixin = (superclass) => class extends superclass {
     let sai_obj = new this.iframe_content.CTATSAI(
       sai.selection,
       sai?.action_type ?? sai.action,
-      sai?.inputs?.value ?? sai.input,
+      sai.input ?? sai?.inputs?.value,
     );
     // console.log(sai.selection,
     //   sai.action,
