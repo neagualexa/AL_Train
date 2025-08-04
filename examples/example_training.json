@@ -1,68 +1,76 @@
 {
-  "batch_train" : [
+  "batch_train": [
     //First agent
-    { "name": "First_Example_Agent",
+    {
+      "name": "First_Example_Agent",
       "type": "CREAgent",
       "args": {
-        "search_depth" : 1,
+        "search_depth": 1,
         "how": "set_chaining",
         "where": "most_specific",
         "when": "decisiontree",
-        
-        "function_set": ["Add","Subtract","Multiply","Divide"],
-        "feature_set": ["Equals"],
-      },      
+
+        "function_set": ["Add", "Subtract", "Multiply", "Divide"],
+        "feature_set": ["Equals"]
+      },
 
       // Give it a problem_set to solve
-      "problem_set" : [
+      "problem_set": [
         // A problem definition: "HTML" interface + "question_file".
-        {"HTML": "./IntegerArithmetic/HTML/IntegerArithmetic.html",
-         "question_file" : "./IntegerArithmetic/brds/1+1.brd",
+        {
+          "HTML": "./IntegerArithmetic/HTML/IntegerArithmetic.html",
+          "question_file": "./IntegerArithmetic/brds/1+1.brd"
         },
 
         // Can set "HTML" parameter to use in all items below.
-        {"set_params" : 
-          {"HTML": "./IntegerArithmetic/HTML/IntegerArithmetic.html"}
+        {
+          "set_params": {
+            "HTML": "./IntegerArithmetic/HTML/IntegerArithmetic.html"
+          }
         },
 
         // Now we can define problems just by setting "question_file".
-        {"question_file" : "./IntegerArithmetic/brds/2+1.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/2+2.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/3+4.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/3+5.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/4+3.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/6+9.brd"},
-        {"question_file" : "./IntegerArithmetic/brds/8+7.brd"},
+        { "question_file": "./IntegerArithmetic/brds/2+1.brd" },
+        { "question_file": "./IntegerArithmetic/brds/2+2.brd" },
+        { "question_file": "./IntegerArithmetic/brds/3+4.brd" },
+        { "question_file": "./IntegerArithmetic/brds/3+5.brd" },
+        { "question_file": "./IntegerArithmetic/brds/4+3.brd" },
+        { "question_file": "./IntegerArithmetic/brds/6+9.brd" },
+        { "question_file": "./IntegerArithmetic/brds/8+7.brd" },
 
         // To repeat problems set 'repetitions'.
-        {"set_params" : {"message" : "Repeating '9+2' 7 times."}},
-        {"question_file" : "./IntegerArithmetic/brds/9+2.brd",
-         "repetitions":7
+        { "set_params": { "message": "Repeating '9+2' 7 times." } },
+        {
+          "question_file": "./IntegerArithmetic/brds/9+2.brd",
+          "repetitions": 7
         },
 
-        // When feedback_mode="demos_only", agent always asks for 
-        //  a bottom-out hint.  
-        {"set_params" : 
-          { "HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html",
-            "feedback_mode" : "demos_only",
-            "message" : "For these problems only give Demonstrations"}
+        // When feedback_mode="demos_only", agent always asks for
+        //  a bottom-out hint.
+        {
+          "set_params": {
+            "HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html",
+            "feedback_mode": "demos_only",
+            "message": "For these problems only give Demonstrations"
+          }
         },
 
-        // Will only get DEMO: experiences for these fraction problems. 
-        {"question_file": "./FractionArithmetic/brds/AD 1_2_plus_2_3.brd"},
-        {"question_file": "./FractionArithmetic/brds/AD 1_4_plus_4_5.brd"},
-        {"question_file": "./FractionArithmetic/brds/AS 11_2_plus_3_2.brd"},
+        // Will only get DEMO: experiences for these fraction problems.
+        { "question_file": "./FractionArithmetic/brds/AD 1_2_plus_2_3.brd" },
+        { "question_file": "./FractionArithmetic/brds/AD 1_4_plus_4_5.brd" },
+        { "question_file": "./FractionArithmetic/brds/AS 11_2_plus_3_2.brd" },
 
         // Feedback_mode back to normal.
-        {"set_params" : 
-          {"feedback_mode" : "full",
-           "message" : "Full feedback for the last ones."}
+        {
+          "set_params": {
+            "feedback_mode": "full",
+            "message": "Full feedback for the last ones."
+          }
         },
 
-        {"question_file": "./FractionArithmetic/brds/AS 3_7_plus_4_7.brd"},
-        {"question_file": "./FractionArithmetic/brds/M 2_3_times_1_2.brd"},
-        {"question_file": "./FractionArithmetic/brds/M 3_10_times_4_5.brd"}
-
+        { "question_file": "./FractionArithmetic/brds/AS 3_7_plus_4_7.brd" },
+        { "question_file": "./FractionArithmetic/brds/M 2_3_times_1_2.brd" },
+        { "question_file": "./FractionArithmetic/brds/M 3_10_times_4_5.brd" }
       ]
     },
 
@@ -71,85 +79,107 @@
       "agent_name": "Second_Example_Agent",
       "agent_type": "CREAgent",
       "args": {
-        "search_depth" : 1,
+        "search_depth": 1,
         "how": "set_chaining",
         "where": "MostSpecific",
         "when": "decisiontree",
-        "function_set": ["Add","Subtract","Multiply","Divide"],
-        "feature_set": ["Equals"],
-      },      
-      "problem_set" : [
-        {"set_params" : 
-          {"HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html"}
+        "function_set": ["Add", "Subtract", "Multiply", "Divide"],
+        "feature_set": ["Equals"]
+      },
+      "problem_set": [
+        {
+          "set_params": {
+            "HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html"
+          }
         },
 
-        // "glob" will get files satisfying a pattern. This one gets 
+        // "glob" will get files satisfying a pattern. This one gets
         //  problems where 5/3 is added to something else "*".
-        {"glob" :
-            {"key" : "question_file",
-             "pattern": "./FractionArithmetic/brds/AD 5_3_plus_*.brd"
-            }
+        {
+          "glob": {
+            "key": "question_file",
+            "pattern": "./FractionArithmetic/brds/AD 5_3_plus_*.brd"
+          }
         },
 
         // We can also randomly "sample" from a fixed set.
-        {"sample": {
-            "n" : 3,
-            "set" : [
-              {"question_file" : "./FractionArithmetic/brds/AD 1_3_plus_3_2.brd"},
-              {"question_file" : "./FractionArithmetic/brds/AD 5_3_plus_2_5.brd"},
-              {"question_file" : "./FractionArithmetic/brds/M 4_9_times_3_4.brd"},
-              {"question_file" : "./FractionArithmetic/brds/M 5_3_times_2_5.brd"},
-              {"question_file" : "./FractionArithmetic/brds/AS 11_2_plus_3_2.brd"},
-            ],
-        }},
+        {
+          "sample": {
+            "n": 3,
+            "set": [
+              {
+                "question_file": "./FractionArithmetic/brds/AD 1_3_plus_3_2.brd"
+              },
+              {
+                "question_file": "./FractionArithmetic/brds/AD 5_3_plus_2_5.brd"
+              },
+              {
+                "question_file": "./FractionArithmetic/brds/M 4_9_times_3_4.brd"
+              },
+              {
+                "question_file": "./FractionArithmetic/brds/M 5_3_times_2_5.brd"
+              },
+              {
+                "question_file": "./FractionArithmetic/brds/AS 11_2_plus_3_2.brd"
+              }
+            ]
+          }
+        },
 
         // Or "sample" from the results of "glob".
-        {"sample": {
-            "n" : 3,
-            "set" : {
-              "glob" : {
-                "key" : "question_file",
+        {
+          "sample": {
+            "n": 3,
+            "set": {
+              "glob": {
+                "key": "question_file",
                 "pattern": "./FractionArithmetic/brds/*.brd"
               }
             }
-        }},
+          }
+        },
 
         // Or "concatenate" and "shuffle" seperate samples.
-        {"shuffle" : {"concatenate" : [
-          {"sample": {
-              "n" : 2,
-              "set" : {
-                "glob" :
-                  {"key" : "question_file",
-                   "pattern": "./FractionArithmetic/brds/AD*.brd",
+        {
+          "shuffle": {
+            "concatenate": [
+              {
+                "sample": {
+                  "n": 2,
+                  "set": {
+                    "glob": {
+                      "key": "question_file",
+                      "pattern": "./FractionArithmetic/brds/AD*.brd"
+                    }
+                  }
+                }
+              },
+              {
+                "sample": {
+                  "n": 2,
+                  "set": {
+                    "glob": {
+                      "key": "question_file",
+                      "pattern": "./FractionArithmetic/brds/AS*.brd"
+                    }
+                  }
+                }
+              },
+              {
+                "sample": {
+                  "n": 2,
+                  "set": {
+                    "glob": {
+                      "key": "question_file",
+                      "pattern": "./FractionArithmetic/brds/M*.brd"
+                    }
                   }
                 }
               }
-            },
-            {"sample": {
-              "n" : 2,
-              "set" : {
-                "glob" :
-                  {"key" : "question_file",
-                   "pattern": "./FractionArithmetic/brds/AS*.brd",
-                  }
-                }
-              }
-            },
-            {"sample": {
-              "n" : 2,
-              "set" : {
-                "glob" :
-                  {"key" : "question_file",
-                   "pattern": "./FractionArithmetic/brds/M*.brd",
-                  }
-                }
-              }
-            }
-        ]}}
-
+            ]
+          }
+        }
       ]
     }
   ]
 }
- 

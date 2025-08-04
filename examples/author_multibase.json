@@ -1,0 +1,50 @@
+{
+  "agent": {
+    "name": "Multi-Base Arithmetic Agent",
+    "type": "CREAgent",
+    "args": {
+      "search_depth": 2,
+      "how": "set_chaining",
+      "error_on_bottom_out": false,
+
+      "where": "most_specific",
+
+      "when_learner": "stand",
+      "which_learner": "when_prediction",
+      "action_chooser": "max_which_utility",
+      "suggest_uncert_neg": true,
+
+      "function_set": ["OnesDigit", "TensDigit", "Add", "Add3"],
+      "feature_set": [],
+      "extra_features": ["RemoveAll", "SkillCandidates", "Match"],
+      "find_neighbors": true,
+      "when_args": {
+        "encode_relative": true,
+        "check_sanity": false
+      },
+
+      "process_learner": "htnlearner",
+      "track_rollout_preseqs": true,
+      "action_filter_args": { "thresholds": [0.3, 0, -0.5, -0.75] },
+
+      "implicit_reward_kinds": ["unordered_groups"]
+    },
+    "stay_active": true
+  },
+  "author": {
+    "study_index": 3,
+    "completeness_profile": "gt-multibase.txt",
+    "required_problems": [
+      "23(5)+14(5)",
+      "102(3)+21(3)",
+      "45(6)+23(6)",
+      "101(2)+110(2)",
+      "34(7)+25(7)",
+      "212(4)+133(4)",
+      "67(8)+54(8)"
+    ],
+    "interfaces": [
+      { "HTML": "./MultiBaseArithmetic/HTML/MultiBaseArithmetic.html" }
+    ]
+  }
+}

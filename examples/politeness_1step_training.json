@@ -1,0 +1,61 @@
+{
+  "batch_train": [
+    //First agent
+    {
+      "name": "1stepPolite_Agent",
+      "type": "CREAgent",
+      "args": {
+        "search_depth": 1,
+        "how": "set_chaining",
+        "where": "most_specific",
+        "when": "decisiontree",
+
+        "function_set": ["Copy"],
+        "feature_set": ["Equals", "ChineseRelationalTitle"]
+      },
+
+      // "repetitions": 3,
+
+      // Give it a problem_set to solve
+      "problem_set": [
+        {
+          "set_params": {
+            "HTML": "./LanguagePoliteness/HTML/SentenceRelativeTitle1stepFormality.html",
+            "message": "1StepPolite: TRY TO INDUCE POLITENESS FROM SITUATION DIRECTLY. Repeating 4 random questions for X agents X times."
+            // "repetitions": 2
+            // this only repeats the questions, not the agent
+          }
+        },
+
+        {
+          "shuffle": {
+            // "sample": {
+            //   "n": 4,
+            //   // Sample X-1 brds and the sample is done randomly in each repetition
+            //   "set": {
+            "glob": {
+              "key": "question_file",
+              "pattern": "./LanguagePoliteness/brds/brd_generated_1step/*.brd"
+            }
+            //   }
+            // }
+          }
+        },
+
+        {
+          "set_params": {
+            "feedback_mode": "test",
+            "message": "1StepPolite: TRY TO INDUCE POLITENESS FROM SITUATION DIRECTLY. Testing the agent with the TEST problem set."
+          }
+        },
+
+        {
+          "glob": {
+            "key": "question_file",
+            "pattern": "./LanguagePoliteness/brds/brd_test_1step/*.brd"
+          }
+        }
+      ]
+    }
+  ]
+}

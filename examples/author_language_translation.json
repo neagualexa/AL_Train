@@ -1,0 +1,47 @@
+{
+  "agent": {
+    "name": "Language Translation Agent",
+    "type": "CREAgent",
+    "args": {
+      "search_depth": 1,
+      "how": "set_chaining",
+      // "error_on_bottom_out": false,
+      "where": "most_specific",
+      "when_learner": "decisiontree",
+      // "which_learner": "when_prediction",
+
+      "action_chooser": "max_which_utility",
+      "suggest_uncert_neg": true,
+
+      "function_set": ["ChinesePronoun", "Copy", "SituationFormality"],
+      "feature_set": [
+        "Equals",
+        "ChinesePOSCategory",
+        "ChineseRelationalTitleFormalityMatch"
+      ],
+      "extra_features": ["Match"],
+      "find_neighbors": true,
+      "when_args": {
+        "encode_relative": false,
+        "one_hot": true,
+        "check_sanity": false
+      },
+
+      "process_learner": "htnlearner",
+      "track_rollout_preseqs": true,
+      "action_filter_args": { "thresholds": [0.3, 0, -0.5, -0.75] },
+
+      "implicit_reward_kinds": ["unordered_groups"]
+    },
+    "stay_active": true
+  },
+  "author": {
+    "study_index": 2,
+    "completeness_profile": "gt-language-translation.txt",
+    "interfaces": [
+      {
+        "HTML": "./LanguageTranslation/HTML/SentenceRelativeTitleFormality.html"
+      }
+    ]
+  }
+}

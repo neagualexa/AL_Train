@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/CTAT.css">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/html-editor-default.css">
+  <link rel="stylesheet" href="/tutors/packages/CML-formal-language/HTML/Assets/FormalLanguage-styles.css">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy-default-osk.min.css">
+  <script src="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy.min.js"></script>
+  <script src="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy_osk.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/nools.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/ctat.min.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/ctatloader.js"></script>
+  <link rel="stylesheet" href="./Assets/GeneralLanguageDialogue-styles.css" />
+
+</head>
+
+<body>
+  <!-- <a id="page-page-1" data-silex-type="page" class="page-element">Page 1</a> -->
+  <div data-silex-id="background-initial" data-silex-type="container"
+    class="background background-initial editable-style container-element prevent-draggable">
+    <div id="main-component" title="" class="container">
+      <!-- <h1 id="title">
+        Chinese Language Formality Exercise
+      </h1> -->
+      <div id="instructions" class="instructions">
+        Complete the dialogue by choosing the most appropriate relative title. Consider the <b>situation of the
+          conversation</b> and the <b>relationship between the speakers</b>.
+      </div>
+      <div id="dialogue-section" class="dialogue-section">
+
+        <!-- Situation Table -->
+        <section id="situation-section" class="flexrow">
+          <table id="situation-table">
+            <tbody>
+              <tr class="tablerow">
+                <th id="situation-param" class="tablecell">
+                  <p title="Situation" class="paragraph">
+                    <b>Situation:</b>
+                  </p>
+                </th>
+                <td class="tablecell">
+                  <div id="situation-input" class="CTATTextInput"></div>
+                </td>
+              </tr>
+              <tr class="tablerow">
+                <th id="situation-param" class="tablecell">
+                  <p title="Situation" class="paragraph">
+                    <b>Relationship (Person A - you):</b>
+                  </p>
+                </th>
+                <td class="tablecell">
+                  <div id="relationship-a-input" class="CTATTextInput"></div>
+                  <span> - </span>
+                  <div id="relationship-b-input" class="CTATTextInput"></div>
+                </td>
+              </tr>
+              <!-- <tr class="tablerow">
+                <th id="situation-param" class="tablecell">
+                  <p title="Situation" class="paragraph">
+                    <b>Age Gap A to B:</b>
+                  </p>
+                </th>
+                <td class="tablecell">
+                  <div id="age-gap-atob" class="CTATTextInput"></div>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+
+          <!-- Formality Checkbox -->
+          <!-- Learn to distinguish between formal and informal situations -->
+          <section id="situation-section" class="flexcolumn">
+            <p id="situations-text" title="Situation" class="paragraph">
+              Based on the situation above, would you use formal or informal language?
+            </p>
+            <div id="formal-checkbox" class="CTATTextInput"></div>
+          </section>
+        </section>
+
+        <!-- Dialogue Section -->
+        <div class="flexcolumn">
+          <!-- Person A Section -->
+          <div id="person-a-speaker" class="speaker">
+            You are talking to Person A:
+          </div>
+          <section id="person-a-dialogue" class="flexrow dialogue-row">
+            <div id="person-a-word-1" class="CTATTextInput"></div>
+            <div id="person-a-word-2" class="CTATTextInput"></div>
+            <div id="person-a-word-3" class="CTATTextInput"></div>
+            <div id="person-a-word-4" class="CTATTextInput"></div>
+            <div id="person-a-word-5" class="CTATTextInput"></div>
+            <div id="person-a-word-6" class="CTATTextInput"></div>
+            <div id="person-a-word-7" class="CTATTextInput"></div>
+            <div id="person-a-word-8" class="CTATTextInput"></div>
+            <div id="person-a-word-9" class="CTATTextInput"></div>
+            <div id="person-a-word-10" class="CTATTextInput"></div>
+            <div id="person-a-word-11" class="CTATTextInput"></div>
+            <div id="person-a-word-12" class="CTATTextInput"></div>
+            <div id="person-a-word-13" class="CTATTextInput"></div>
+            <div id="person-a-word-14" class="CTATTextInput"></div>
+            <div id="person-a-word-15" class="CTATTextInput"></div>
+          </section>
+
+          <!-- Options Section -->
+          <!-- Learn to choose the relative title that matches the situation's formality -->
+          <div id="option-section" class="flexcolumn">
+            <div id="option-speaker" class="speaker">
+              Choose one of the following relative titles and fill in the sentence above. Make sure to match the
+              formality of the situation:
+            </div>
+            <section id="option-section" class="flexrow dialogue-row">
+              <div id="option-word-1" class="CTATTextInput"></div>
+              <div id="option-word-2" class="CTATTextInput"></div>
+              <div id="option-word-3" class="CTATTextInput"></div>
+              <div id="option-word-4" class="CTATTextInput"></div>
+              <!-- <div id="option-word-5" class="CTATTextInput"></div> -->
+            </section>
+          </div>
+        </div>
+        <!-- Done Button -->
+        <section id="done-section" class="flexrow">
+          <div data-silex-type="ctat" id="done" data-ctat-tabindex="1" data-silex-id="silex-id-1683404396701-36"
+            data-ctat-component="CTATDoneButton" data-ctat-enabled="true"
+            class="CTATDoneButton editable-style silex-id-1683404396701-36 page-page-1 paged-element CTATComponent">
+          </div>
+        </section>
+      </div>
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>

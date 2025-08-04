@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/CTAT.css">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/html-editor-default.css">
+  <link rel="stylesheet" href="/tutors/packages/CML-formal-language/HTML/Assets/FormalLanguage-styles.css">
+  <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy-default-osk.min.css">
+  <script src="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy.min.js"></script>
+  <script src="https://cdn.ctat.cs.cmu.edu/releases/lab/guppy/guppy_osk.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/nools.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/ctat.min.js"></script>
+  <script type="text/javascript" src="https://cdn.ctat.cs.cmu.edu/releases/lab/ctatloader.js"></script>
+  <link rel="stylesheet" href="./Assets/GeneralLanguageDialogue-styles.css" />
+
+</head>
+
+<body>
+  <a id="page-page-1" data-silex-type="page" class="page-element">Page 1</a>
+  <div data-silex-id="background-initial" data-silex-type="container"
+    class="background background-initial editable-style container-element prevent-draggable">
+    <div id="main-component" title="" class="container">
+      <h1 id="title">
+        Language Dialogue Exercise
+      </h1>
+      <div id="instructions" class="instructions">
+        Complete the dialogue by filling in the missing words (relative titles). Consider the <b>situation of the
+          conversation</b> and the <b>relationship between the speakers</b>.
+      </div>
+      <div id="dialogue-section" class="dialogue-section">
+
+        <!-- Situation Table -->
+        <section id="situation-section" class="flexrow">
+          <p id="situations-text" title="Situation" class="paragraph">
+            Situation:
+          </p>
+          <table id="situation-table">
+            <tbody>
+              <tr class="tablerow">
+                <th class="tablehead">
+                  <p title="Situation" class="paragraph">
+                    Situation:
+                  </p>
+                </th>
+                <th class="tablehead">
+                  <div id="situation-input" class="CTATTextInput"></div>
+                </th>
+              </tr>
+              <tr class="tablerow">
+                <td class="tablecell">
+                  <p title="Situation" class="paragraph">
+                    <b>Relationship (Person A - Person B):</b>
+                  </p>
+                </td>
+                <td class="tablecell">
+                  <div id="relationship-a-input" class="CTATTextInput"></div>
+                  <span> - </span>
+                  <div id="relationship-b-input" class="CTATTextInput"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Dialogue Section -->
+        <div class="flexcolumn">
+          <!-- Person A Section -->
+          <div id="person-a-speaker" class="speaker">
+            Person A:
+          </div>
+          <section id="person-a-dialogue" class="flexrow dialogue-row">
+            <div id="person-a-word-1" class="CTATTextInput"></div>
+            <div id="person-a-word-2" class="CTATTextInput"></div>
+            <div id="person-a-word-3" class="CTATTextInput"></div>
+            <div id="person-a-word-4" class="CTATTextInput"></div>
+            <div id="person-a-word-5" class="CTATTextInput"></div>
+            <div id="person-a-word-6" class="CTATTextInput"></div>
+            <div id="person-a-word-7" class="CTATTextInput"></div>
+            <div id="person-a-word-8" class="CTATTextInput"></div>
+            <div id="person-a-word-9" class="CTATTextInput"></div>
+            <div id="person-a-word-10" class="CTATTextInput"></div>
+            <div id="person-a-word-11" class="CTATTextInput"></div>
+            <div id="person-a-word-12" class="CTATTextInput"></div>
+            <div id="person-a-word-13" class="CTATTextInput"></div>
+            <div id="person-a-word-14" class="CTATTextInput"></div>
+            <div id="person-a-word-15" class="CTATTextInput"></div>
+          </section>
+
+          <!-- Person B Section -->
+          <div id="person-b-section" class="flexcolumn">
+            <div id="person-b-speaker" class="speaker">
+              Person B:
+            </div>
+            <section id="person-b-dialogue" class="flexrow dialogue-row">
+              <div id="person-b-word-1" class="CTATTextInput"></div>
+              <div id="person-b-word-2" class="CTATTextInput"></div>
+              <div id="person-b-word-3" class="CTATTextInput"></div>
+              <div id="person-b-word-4" class="CTATTextInput"></div>
+              <div id="person-b-word-5" class="CTATTextInput"></div>
+              <div id="person-b-word-6" class="CTATTextInput"></div>
+              <div id="person-b-word-7" class="CTATTextInput"></div>
+              <div id="person-b-word-8" class="CTATTextInput"></div>
+              <div id="person-b-word-9" class="CTATTextInput"></div>
+              <div id="person-b-word-10" class="CTATTextInput"></div>
+              <div id="person-b-word-11" class="CTATTextInput"></div>
+              <div id="person-b-word-12" class="CTATTextInput"></div>
+              <div id="person-b-word-13" class="CTATTextInput"></div>
+              <div id="person-b-word-14" class="CTATTextInput"></div>
+              <div id="person-b-word-15" class="CTATTextInput"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Done Button -->
+      <section id="done-section" class="flexrow">
+        <div data-silex-type="ctat" id="done" data-ctat-tabindex="1" data-silex-id="silex-id-1683404396701-36"
+          data-ctat-component="CTATDoneButton" data-ctat-enabled="true"
+          class="CTATDoneButton editable-style silex-id-1683404396701-36 page-page-1 paged-element CTATComponent">
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+
+</html>

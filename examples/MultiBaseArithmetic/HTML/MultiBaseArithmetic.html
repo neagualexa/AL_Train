@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- generator meta tag -->
+    <!-- leave this for stats and Silex version check -->
+    <meta name="generator" content="Silex v2.2.5" />
+    <!-- End of generator meta tag -->
+    <!--CSS-->
+
+    <link
+      data-silex-static="true"
+      href="../CTAT/normalize.css"
+      rel="stylesheet"
+    />
+    <link
+      data-silex-static="true"
+      href="../CTAT/front-end.css"
+      rel="stylesheet"
+    />
+    <link data-silex-static="true" href="../CTAT/CTAT.css" rel="stylesheet" />
+
+    <script
+      data-silex-static="true"
+      type="text/javascript"
+      src="../CTAT/jquery.min.js"
+    ></script>
+    <script
+      data-silex-static="true"
+      type="text/javascript"
+      src="../CTAT/ctat.min.js"
+    ></script>
+    <script
+      data-silex-static="true"
+      type="text/javascript"
+      src="../CTAT/ctatloader.js"
+    ></script>
+    <script
+      data-silex-static="true"
+      type="text/javascript"
+      src="../CTAT/nools.js"
+    ></script>
+
+    <style type="text/css" class="silex-style"></style>
+
+    <meta name="interface-id" content="MultiBaseArithmetic" />
+
+    <style id="current-page-style">
+      .page-page-1 {
+        display: inherit;
+      }
+    </style>
+    <!-- Silex HEAD tag do not remove -->
+    <!-- End of Silex HEAD tag do not remove -->
+    <link rel="stylesheet" href="Assets/MultiBaseArithmetic-styles.css" />
+  </head>
+  <body class="body-initial prevent-draggable silex-runtime silex-published">
+    <a id="page-page-1" data-silex-type="page" class="page-element">Page 1</a>
+    <div
+      data-silex-id="background-initial"
+      class="background background-initial editable-style container-element prevent-draggable"
+      data-silex-type="container"
+    >
+      <!-- Title -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style title-text text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="title"
+        id="titleText"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        Multi-Base Addition
+      </div>
+
+      <!-- Base Selection -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style base-label text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="base-label"
+        id="baseLabel"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        Base:
+      </div>
+
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent base-input page-page-1 paged-element"
+        data-ctat-tabindex="1"
+        data-silex-id="base-input"
+        id="baseInput"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+
+      <!-- Problem Display -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style problem-text text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="problem-text"
+        id="problemText"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        Problem will appear here
+      </div>
+
+      <!-- First Number Input (A) - 4 digits -->
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-a4 page-page-1 paged-element"
+        data-ctat-tabindex="2"
+        data-silex-id="silex-id-input-a4"
+        id="inpA4"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-a3 page-page-1 paged-element"
+        data-ctat-tabindex="3"
+        data-silex-id="silex-id-input-a3"
+        id="inpA3"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-a2 page-page-1 paged-element"
+        data-ctat-tabindex="4"
+        data-silex-id="silex-id-input-a2"
+        id="inpA2"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-a1 page-page-1 paged-element"
+        data-ctat-tabindex="5"
+        data-silex-id="silex-id-input-a1"
+        id="inpA1"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+
+      <!-- Second Number Input (B) - 4 digits -->
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-b4 page-page-1 paged-element"
+        data-ctat-tabindex="6"
+        data-silex-id="silex-id-input-b4"
+        id="inpB4"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-b3 page-page-1 paged-element"
+        data-ctat-tabindex="7"
+        data-silex-id="silex-id-input-b3"
+        id="inpB3"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-b2 page-page-1 paged-element"
+        data-ctat-tabindex="8"
+        data-silex-id="silex-id-input-b2"
+        id="inpB2"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-input-b1 page-page-1 paged-element"
+        data-ctat-tabindex="9"
+        data-silex-id="silex-id-input-b1"
+        id="inpB1"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+
+      <!-- Addition Sign -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style plus-sign text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="plus-sign"
+        id="plusSign"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        +
+      </div>
+
+      <!-- Line under addition -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style line-under text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="line-under"
+        id="lineUnder"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        ___________________
+      </div>
+
+      <!-- Carry digits -->
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-carry4 page-page-1 paged-element"
+        data-ctat-tabindex="10"
+        data-silex-id="silex-id-carry4"
+        id="carry4"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-carry3 page-page-1 paged-element"
+        data-ctat-tabindex="11"
+        data-silex-id="silex-id-carry3"
+        id="carry3"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-carry2 page-page-1 paged-element"
+        data-ctat-tabindex="12"
+        data-silex-id="silex-id-carry2"
+        id="carry2"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-carry1 page-page-1 paged-element"
+        data-ctat-tabindex="13"
+        data-silex-id="silex-id-carry1"
+        id="carry1"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+
+      <!-- Result Output - 5 digits to handle overflow -->
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-output5 page-page-1 paged-element"
+        data-ctat-tabindex="14"
+        data-silex-id="silex-id-output5"
+        id="out5"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-output4 page-page-1 paged-element"
+        data-ctat-tabindex="15"
+        data-silex-id="silex-id-output4"
+        id="out4"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-output3 page-page-1 paged-element"
+        data-ctat-tabindex="16"
+        data-silex-id="silex-id-output3"
+        id="out3"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-output2 page-page-1 paged-element"
+        data-ctat-tabindex="17"
+        data-silex-id="silex-id-output2"
+        id="out2"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent silex-id-output1 page-page-1 paged-element"
+        data-ctat-tabindex="18"
+        data-silex-id="silex-id-output1"
+        id="out1"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="true"
+      ></div>
+
+      <!-- Base notation for result -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style base-notation text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="base-notation"
+        id="baseNotation"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        (base)
+      </div>
+
+      <!-- Instructions -->
+      <div
+        data-silex-type="text"
+        class="CTATTextField editable-style instructions-text text-element page-page-1 paged-element CTATComponent"
+        data-silex-id="instructions"
+        id="instructionsText"
+        data-ctat-component="CTATTextBasedComponent"
+        data-ctat-enabled="true"
+        contenteditable="false"
+      >
+        Enter the base first, then input the digits for each number. Use carry
+        digits when needed.<br />
+        Valid digits for base N: 0 through (N-1)<br />
+        Example: Base 5 uses digits 0,1,2,3,4
+      </div>
+
+      <!-- Hidden elements for calculations -->
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent hidden-element page-page-1 paged-element"
+        data-ctat-tabindex="1"
+        data-silex-id="hidden1"
+        id="hidey1"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="false"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent hidden-element page-page-1 paged-element"
+        data-ctat-tabindex="1"
+        data-silex-id="hidden2"
+        id="hidey2"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="false"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATTextInput editable-style CTATComponent hidden-element page-page-1 paged-element"
+        data-ctat-tabindex="1"
+        data-silex-id="hidden3"
+        id="hidey3"
+        data-ctat-component="CTATTextInput"
+        data-ctat-enabled="false"
+      ></div>
+
+      <!-- Control buttons -->
+      <div
+        data-silex-type="ctat"
+        id="hint"
+        class="CTATHintButton editable-style hint-button page-page-1 paged-element CTATComponent"
+        data-silex-id="hint-button"
+        data-ctat-component="CTATHintButton"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        id="done"
+        class="CTATDoneButton editable-style done-button page-page-1 paged-element CTATComponent"
+        data-ctat-tabindex="1"
+        data-silex-id="done-button"
+        data-ctat-component="CTATDoneButton"
+        data-ctat-enabled="true"
+      ></div>
+      <div
+        data-silex-type="ctat"
+        class="CTATHintWindow editable-style hint-window CTATComponent"
+        data-ctat-tabindex="1"
+        data-silex-id="hint-window"
+        id="ctatdiv54"
+        data-ctat-component="CTATHintWindow"
+        onkeypress="return noenter(event)"
+        data-ctat-enabled="true"
+      ></div>
+    </div>
+  </body>
+</html>

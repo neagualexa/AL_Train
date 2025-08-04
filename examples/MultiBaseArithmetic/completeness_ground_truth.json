@@ -1,0 +1,55 @@
+{
+  "completeness_ground_truth": {
+    "base_recognition": {
+      "description": "Student can identify the base of a number system",
+      "difficulty": "basic",
+      "prerequisites": []
+    },
+    "digit_validation": {
+      "description": "Student understands valid digits for different bases",
+      "difficulty": "basic",
+      "prerequisites": ["base_recognition"]
+    },
+    "single_digit_addition": {
+      "description": "Student can add single digits in a given base",
+      "difficulty": "easy",
+      "prerequisites": ["digit_validation"]
+    },
+    "carry_operations": {
+      "description": "Student understands when and how to carry in different bases",
+      "difficulty": "medium",
+      "prerequisites": ["single_digit_addition"]
+    },
+    "multi_digit_addition": {
+      "description": "Student can perform multi-digit addition in any base",
+      "difficulty": "advanced",
+      "prerequisites": ["carry_operations"]
+    },
+    "place_value_understanding": {
+      "description": "Student understands place value in different number bases",
+      "difficulty": "advanced",
+      "prerequisites": ["base_recognition", "carry_operations"]
+    },
+    "base_conversion": {
+      "description": "Student can convert between different number bases",
+      "difficulty": "expert",
+      "prerequisites": ["place_value_understanding", "multi_digit_addition"]
+    }
+  },
+  "skill_progression": [
+    "base_recognition",
+    "digit_validation",
+    "single_digit_addition",
+    "carry_operations",
+    "multi_digit_addition",
+    "place_value_understanding",
+    "base_conversion"
+  ],
+  "assessment_criteria": {
+    "correct_base_identification": 0.2,
+    "valid_digit_usage": 0.2,
+    "correct_addition": 0.3,
+    "proper_carry_handling": 0.2,
+    "final_answer_accuracy": 0.1
+  }
+}

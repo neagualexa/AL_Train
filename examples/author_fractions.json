@@ -1,56 +1,55 @@
-{	
-	"agent" : {
-	  "name": "Unnamed Agent",
-	  "type": "CREAgent",
-	  "args": {
-	    "search_depth" : 2,
-	    // "how": "nlp_set_chaining",
-	    "how": "set_chaining",
+{
+  "agent": {
+    "name": "Unnamed Agent",
+    "type": "CREAgent",
+    "args": {
+      "search_depth": 2,
+      // "how": "nlp_set_chaining",
+      "how": "set_chaining",
 
+      "where": "most_specific",
+      // "where": "antiunify",
 
-	    "where": "most_specific",
-	    // "where": "antiunify",
+      // DECISION TREE Config
+      // "when": "decisiontree",
+      // STAND Config
+      "when_learner": "stand",
+      "which_learner": "when_prediction",
+      "action_chooser": "max_which_utility",
+      "suggest_uncert_neg": true,
 
-	    // DECISION TREE Config
-	    // "when": "decisiontree",
-	    // STAND Config
-	    "when_learner": "stand",
-        "which_learner": "when_prediction",
-        "action_chooser" : "max_which_utility",
-        "suggest_uncert_neg" : true,
+      "function_set": ["Add", "Multiply", "Square", "AcrossMultiply"],
+      "feature_set": ["Equals"],
 
-        "function_set" : ["Add","Multiply"],
-	    "feature_set" : ["Equals"],
+      "error_on_bottom_out": false,
+      "one_skill_per_match": true,
 
-	    "error_on_bottom_out" : false,
-	    "one_skill_per_match" : true,
-
-	    "extra_features" : ["Match"],
-	    "find_neighbors" : true, 
-	    //Note: encode_relative=true works fine but doesn't agree  
-	    //    with the gt-frac.txt completeness profile for some reason
-	    "when_args": {
-            "encode_relative" : false,
-            "one_hot" : true,
-            "check_sanity" : false
-        },
-
-        "process_learner": "htnlearner",
-        "track_rollout_preseqs" : true,
-        "action_filter_args" : {"thresholds": [0.3, 0, -0.5, -0.75]},
-
-        "implicit_reward_kinds" : ["unordered_groups"]
+      "extra_features": ["Match"],
+      "find_neighbors": true,
+      //Note: encode_relative=true works fine but doesn't agree
+      //    with the gt-frac.txt completeness profile for some reason
+      "when_args": {
+        "encode_relative": false,
+        "one_hot": true,
+        "check_sanity": false
       },
-      "stay_active" : true,
+
+      "process_learner": "htnlearner",
+      "track_rollout_preseqs": true,
+      "action_filter_args": { "thresholds": [0.3, 0, -0.5, -0.75] },
+
+      "implicit_reward_kinds": ["unordered_groups"]
+    },
+    "stay_active": true
   },
-  "author" : {
-  	"study_index" : 2,
-  	"completeness_profile" : "gt-frac.txt",
-  	"interfaces" : [
-  		{"HTML": "./FractionArithmetic/HTML/FractionArithmetic_std.html"},
-  		//{"HTML": "./MultiColumnArithmetic/HTML/MultiColumnArithmetic.html"},
-  		//{"HTML": "./OtherTutors/HTML/TriangleArea.html"},
-  		//{"HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html"}
-  	]	
-  },
+  "author": {
+    "study_index": 2,
+    "completeness_profile": "gt-frac.txt",
+    "interfaces": [
+      { "HTML": "./FractionArithmetic/HTML/FractionArithmetic_std.html" }
+      //{"HTML": "./MultiColumnArithmetic/HTML/MultiColumnArithmetic.html"},
+      //{"HTML": "./OtherTutors/HTML/TriangleArea.html"},
+      //{"HTML": "./FractionArithmetic/HTML/fraction_arithmetic.html"}
+    ]
+  }
 }
